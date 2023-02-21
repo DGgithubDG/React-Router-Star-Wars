@@ -18,7 +18,7 @@ const PlanetDetails = () => {
                 <div className="w-100 mt-4">
                     <h1 className="text-dark">{store.singlePlanet.properties.name}</h1>
                  </div>
-                <div className="card mb-3" style={{maxwidth: "540px"}}>
+                <div className="card mb-3" style={{maxwidth: "360px"}}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src={"https://starwars-visualguide.com/assets/img/planets/" + id + ".jpg"} className="img-fluid rounded-start" alt="..."></img>
@@ -29,11 +29,7 @@ const PlanetDetails = () => {
                                 <p className="card-text text-dark fs-5"><strong>Diameter: </strong>{store.singlePlanet.properties.diameter}</p>
                                 <p className="text-dark fs-5"><strong>Rotation period: </strong>{store.singlePlanet.properties.rotation_period}</p>
                                 <p className="text-dark fs-5"><strong>Orbital period: </strong>{store.singlePlanet.properties.orbital_period}</p>
-                                <p className="text-dark fs-5"><strong>Gravity: </strong>{store.singlePlanet.properties.gravity}</p>
-                                <p className="text-dark fs-5"><strong>Population: </strong>{store.singlePlanet.properties.population}</p>
-                                <p className="text-dark fs-5"><strong>Climate: </strong>{store.singlePlanet.properties.climate}</p>
-                                <p className="text-dark fs-5"><strong>Terrain: </strong>{store.singlePlanet.properties.terrain}</p>
-                                <p className="text-dark fs-5"><strong>Surface Water: </strong>{store.singlePlanet.properties.surface_water}</p>
+                              
                                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>                     

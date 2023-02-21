@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const CharacterDetails = () => {
     const {store, actions} = useContext(Context);
@@ -17,7 +17,7 @@ const CharacterDetails = () => {
                             <div className="w-100 mt-4">
                                     <h1 className="text-dark">{store.person.properties.name}</h1>
                             </div>
-                            <div className="card mb-3" style={{maxwidth: "540px"}}>
+                            <div className="card mb-3" style={{maxwidth: "3600px"}}>
                             <div className="row g-0">
                                 <div className="col-md-4">
                                 <img src={"https://starwars-visualguide.com/assets/img/characters/" + id + ".jpg"} className="img-fluid rounded-start" alt="..."></img>
@@ -28,10 +28,6 @@ const CharacterDetails = () => {
                                     <p className="card-text text-dark fs-5"><strong>Birth Year: </strong>{store.person.properties.birth_year}</p>
                                     <p className="text-dark fs-5"><strong>Height: </strong>{store.person.properties.height}</p>
                                     <p className="text-dark fs-5"><strong>Mass: </strong>{store.person.properties.mass}</p>
-                                    <p className="text-dark fs-5"><strong>Hair Color: </strong>{store.person.properties.hair_color}</p>
-                                    <p className="text-dark fs-5"><strong>Skin Color: </strong>{store.person.properties.skin_color}</p>
-                                    <p className="text-dark fs-5"><strong>Eyes Color: </strong>{store.person.properties.eye_color}</p>
-                                    <p className="text-dark fs-5"><strong>Gender: </strong>{store.person.properties.gender}</p>
                                     <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                 </div>
                                 </div>
