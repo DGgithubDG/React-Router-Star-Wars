@@ -1,17 +1,18 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import { CharacterDetails } from "./views/CharacterDetails";
-import { PlanetDetails } from "./views/PlanetDetails";
-import { VehicleDetails } from "./views/VehicleDetails";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
+import CharacterDetails from "./views/CharacterDetails.js";
+import PlanetDetails from "./views/PlanetDetails.js";
+import VehicleDetails from "./views/VehicleDetails.js";
 
 //create your first component
 const Layout = () => {
@@ -23,16 +24,27 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/CharacterDetails" element={<CharacterDetails />} />
-						<Route path="/PlanetDetails" element={<PlanetDetails />} />
-						<Route path="/VehicleDetails" element={<VehicleDetails />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
+					<Navbar />	
+					{/* <Switch> */}
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route exact path="/charactersdetails/:id">
+							<CharacterDetails />
+						</Route>
+						<Route exact path="/planetdetails/:id">
+							<PlanetDetails />
+						</Route>
+						<Route exact path="/vehicledetails/:id">
+							<VehicleDetails />
+						</Route>
+						<Route exact path="/single/:theid">
+							<Single />
+						</Route>
+						<Route>
+							<h1>Not found!</h1>
+						</Route>
+					{/* </Switch> */}
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>

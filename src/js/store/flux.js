@@ -9,11 +9,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicles: [],
 			singleVehicle: null,
 		},
-
 		actions: {
 			getPeople: () => {
 				try {
-					return fetch("https://www.swapi.tech/api/people", {
+					return fetch("https://www.swapi.tech/api/people?page=1&limit=100", {
 						method: "GET",
 						redirect: "follow"
 					})
@@ -23,8 +22,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return [];
 				}
 			},
-			denisKey: "i know i can do this shit",
-
 
 			getPerson: id => {
 				try {
@@ -120,12 +117,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			denisAction: (string) => {
-				const store = getStore();
-
-				setStore({denisKey : string});
-		},
-	}};
+		}
+	};
 };
 
 export default getState;
